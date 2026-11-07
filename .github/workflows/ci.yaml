@@ -25,6 +25,7 @@ concurrency:
 jobs:
   Credo:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout
@@ -44,6 +45,7 @@ jobs:
 
   Dependencies:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout
@@ -63,6 +65,7 @@ jobs:
 
   Dialyzer:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout
@@ -82,6 +85,7 @@ jobs:
 
   Format:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout
@@ -103,6 +107,7 @@ jobs:
     name: Test (Elixir ${{ matrix.versions.elixir }} OTP ${{ matrix.versions.otp }})
 
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     env:
       MIX_ENV: test
@@ -136,4 +141,3 @@ jobs:
             otp: 27
           - elixir: 1.19
             otp: 27
-
